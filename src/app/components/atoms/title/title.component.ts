@@ -1,10 +1,12 @@
 import { Component, Input } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-title',
   templateUrl: './title.component.html',
   styleUrls: ['./title.component.css'],
-  standalone: true
+  standalone: true,
+  imports: [CommonModule]
 })
 export class TitleComponent {
   // Input property to customize the title text

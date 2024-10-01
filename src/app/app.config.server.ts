@@ -1,11 +1,12 @@
-import { mergeApplicationConfig, ApplicationConfig } from '@angular/core';
-import { provideServerRendering } from '@angular/platform-server';
+import { mergeApplicationConfig } from '@angular/core';
 import { appConfig } from './app.config';
 
-const serverConfig: ApplicationConfig = {
+// Asumiendo que `serverConfig` ya está definido y contiene `providers`
+export const serverConfig = {
   providers: [
-    provideServerRendering()
+    // Agrega aquí cualquier configuración específica para el servidor
   ]
 };
 
+// Combina las configuraciones en un solo objeto que incluye `providers`
 export const config = mergeApplicationConfig(appConfig, serverConfig);

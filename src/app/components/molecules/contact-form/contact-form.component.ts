@@ -2,13 +2,14 @@ import { Component, Output, EventEmitter } from '@angular/core';
 import { ButtonComponent } from '../../atoms/button/button.component';
 import { ParagraphComponent } from '../../atoms/paragraph/paragraph.component';
 import {FormsModule} from "@angular/forms";
+import {CommonModule} from "@angular/common";
 
 @Component({
   selector: 'app-contact-form',
   templateUrl: './contact-form.component.html',
   styleUrls: ['./contact-form.component.css'],
   standalone: true,
-  imports: [ButtonComponent, ParagraphComponent, FormsModule]
+  imports: [ButtonComponent, ParagraphComponent, FormsModule, CommonModule]
 })
 export class ContactFormComponent {
   // Propiedades para almacenar los valores de los campos del formulario
