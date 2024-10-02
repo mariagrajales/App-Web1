@@ -1,0 +1,60 @@
+<div class="container">
+  <div class="form-container">
+    <!-- Primera fila: Nombre y Edad -->
+    <div class="form-row">
+
+      <app-owner-select
+        class="form-field"
+        [owners]="owners"
+        [(selectedOwner)]="dog.ownerId">
+      </app-owner-select>
+      <app-form-field
+        class="form-field"
+        label="Nombre"
+        placeholder="Ingresa el nombre del perrito"
+        [(value)]="dog.name">
+      </app-form-field>
+
+    </div>
+
+    <!-- Segunda fila: Raza y Sexo -->
+    <div class="form-row">
+      <app-form-field
+        class="form-field"
+        label="Edad"
+        type="number"
+        placeholder="Ingresa la edad"
+        [(value)]="dog.age">
+      </app-form-field>
+
+      <app-form-field
+        class="form-field"
+        label="Raza"
+        placeholder="Ingresa la raza"
+        [(value)]="dog.breed">
+      </app-form-field>
+    </div>
+
+    <!-- Tercera fila: Color y Dueño -->
+    <div class="form-row">
+      <app-form-field
+        class="form-field"
+        label="Sexo"
+        placeholder="Ingresa el sexo"
+        [(value)]="dog.sex">
+      </app-form-field>
+
+      <app-form-field
+        class="form-field"
+        label="Color"
+        placeholder="Ingresa el color"
+        [(value)]="dog.color">
+      </app-form-field>
+
+
+    </div>
+
+    <!-- Botón de registro -->
+    <button (click)="onSubmit()">Registrar</button>
+  </div>
+</div>

@@ -1,0 +1,51 @@
+/* Centrar el formulario vertical y horizontalmente */
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Para centrar verticalmente */
+}
+
+/* Estilos del formulario */
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 600px;
+  width: 100%;
+  padding: 30px;
+  background: linear-gradient(135deg, #f9f9f9, #e0e0e0);
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo para las filas de campos */
+.form-row {
+  display: flex;
+  width: 100%;
+  gap: 20px; /* Espacio entre columnas */
+  margin-bottom: 20px;
+}
+
+/* Cada columna ocupa el 50% del espacio */
+.form-field {
+  flex: 1;
+}
+
+/* Estilo del botón */
+button {
+  width: 100%;
+  padding: 12px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
