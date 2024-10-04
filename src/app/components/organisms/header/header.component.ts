@@ -1,7 +1,8 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component } from '@angular/core';
 import { LogoComponent } from '../../atoms/logo/logo.component';
 import { ButtonComponent } from '../../atoms/button/button.component';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -11,9 +12,9 @@ import { CommonModule } from '@angular/common';
   imports: [LogoComponent, ButtonComponent, CommonModule]
 })
 export class HeaderComponent {
-  @Output() navigate = new EventEmitter<string>();
+  constructor(private router: Router) {}
 
   onNavigate(route: string) {
-    this.navigate.emit(route);
+    this.router.navigate([route]);
   }
 }
