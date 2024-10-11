@@ -1,17 +1,25 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { LabelComponent } from '../../atoms/label/label.component';
-import { SelectComponent } from '../../atoms/select/select.component';
-import { CommonModule } from '@angular/common';
+import { Owner } from '../../../models/owner.model';
+import {LabelComponent} from "../../atoms/label/label.component";
+import {NgForOf} from "@angular/common";
 
 @Component({
   selector: 'app-owner-select',
   templateUrl: './owner-select.component.html',
   styleUrls: ['./owner-select.component.css'],
-  standalone: true,
-  imports: [LabelComponent, SelectComponent, CommonModule]
+  imports: [
+    LabelComponent,
+    NgForOf
+  ],
+  standalone: true
 })
 export class OwnerSelectComponent {
-  @Input() owners: Array<{ value: string, label: string }> = [];
-  @Input() selectedOwner: string = '';
-  @Output() selectedOwnerChange = new EventEmitter<string>();
+  @Input() owners: Owner[] = [];
+  @Input() selectedOwner: number = 0;
+  @Output() selectedOwnerChange = new EventEmitter<number>();
+
+  onOwnerChange(event: Event) {
+    const target = event.target as HTMLSelectElement;
+    this.selectedOwnerChange.emit(Number(target.value));  // Emitir como número
+  }
 }

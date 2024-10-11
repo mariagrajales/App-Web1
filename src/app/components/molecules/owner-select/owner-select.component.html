@@ -1,6 +1,6 @@
 <app-label text="Seleccionar Dueño"></app-label>
-<app-select
-  [options]="owners"
-  [selectedValue]="selectedOwner"
-  (selectedValueChange)="selectedOwnerChange.emit($event)">
-</app-select>
+<select [value]="selectedOwner" (change)="onOwnerChange($event)" class="owner-select">
+  <option *ngFor="let owner of owners" [value]="owner.id">{{ owner.name }}</option>
+</select>
+
+

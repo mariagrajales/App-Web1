@@ -9,5 +9,5 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule]
 })
 export class DogCardComponent {
-  @Input() dog!: { name: string; age: number; breed: string; color: string; owner: string };
+  @Input() dog: any;  // Recibe el objeto perro desde el componente padre
 }
