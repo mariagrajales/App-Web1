@@ -4,4 +4,22 @@
   <p><strong>Raza:</strong> {{ dog.breed }}</p>
   <p><strong>Color:</strong> {{ dog.color }}</p>
   <p><strong>Dueño:</strong> {{ dog.owner }}</p>
+
+  <!-- Botón para generar certificado -->
+  <button (click)="openCertificateModal()">Generar certificado</button>
+
+  <!-- Modal -->
+  <div *ngIf="isModalOpen" class="modal">
+    <div class="modal-content">
+      <span class="close" (click)="closeModal()">&times;</span>
+      <h3>Generar Certificado</h3>
+      <label for="vaccine">Nombre de la vacuna:</label>
+      <input type="text" id="vaccine" [(ngModel)]="vaccineName" placeholder="Ingresa el nombre de la vacuna">
+
+      <label for="date">Fecha de Aplicación:</label>
+      <input type="date" id="date" [(ngModel)]="applicationDate" placeholder="Ingresa la fecha de aplicación">
+
+      <button (click)="generateCertificate()">Descargar Certificado</button>
+    </div>
+  </div>
 </div>
