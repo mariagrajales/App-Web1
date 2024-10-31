@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import {Component, Input, numberAttribute} from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -12,5 +12,5 @@ export class TitleComponent {
   // Input property to customize the title text
   @Input() text: string = 'Default Title'; // Título por defecto
   // Input property for HTML heading level (h1, h2, h3, etc.)
-  @Input() level: number = 1; // Nivel del encabezado
+  @Input({transform: numberAttribute}) level: number = 1; // Nivel del encabezado
 }

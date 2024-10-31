@@ -1,19 +1,19 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
-import { LabelComponent } from '../../atoms/label/label.component';
-import { InputComponent } from '../../atoms/input/input.component';
-import { CommonModule } from '@angular/common';
+import { Component, Input } from '@angular/core';
+import { ControlValueAccessor, FormControl, NG_VALUE_ACCESSOR } from '@angular/forms';
+import {LabelComponent} from "../../atoms/label/label.component";
 
 @Component({
   selector: 'app-form-field',
   templateUrl: './form-field.component.html',
   styleUrls: ['./form-field.component.css'],
-  standalone: true,
-  imports: [LabelComponent, InputComponent, CommonModule]
+  imports: [
+    LabelComponent
+  ],
+  standalone: true
 })
 export class FormFieldComponent {
   @Input() label: string = '';
   @Input() type: string = 'text';
   @Input() placeholder: string = '';
-  @Input() value: string = '';
-  @Output() valueChange = new EventEmitter<string>();
+  @Input() controlName: string = ''; // Este es el nombre del control que se pasará desde formControlName
 }

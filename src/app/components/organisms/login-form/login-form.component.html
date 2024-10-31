@@ -1,0 +1,11 @@
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <app-form-field label="Nombre de Usuario" placeholder="Introduce tu nombre de usuario" type="text">
+    <app-input formControlName="username"></app-input>
+  </app-form-field>
+
+  <app-form-field label="Contraseña" placeholder="Introduce tu contraseña" type="password">
+    <app-input formControlName="password"></app-input>
+  </app-form-field>
+
+  <button type="submit">Iniciar Sesión</button>
+</form>

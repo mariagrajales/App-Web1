@@ -1,0 +1,36 @@
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+  <app-form-field label="Nombre" placeholder="Introduce tu nombre" type="text">
+    <app-input formControlName="nombre"></app-input>
+  </app-form-field>
+
+  <app-form-field label="Apellido Paterno" placeholder="Introduce tu apellido paterno" type="text">
+    <app-input formControlName="apellidoP"></app-input>
+  </app-form-field>
+
+  <app-form-field label="Apellido Materno" placeholder="Introduce tu apellido materno" type="text">
+    <app-input formControlName="apellidoM"></app-input>
+  </app-form-field>
+
+  <app-form-field label="Edad" placeholder="Introduce tu edad" type="number">
+    <app-input formControlName="edad"></app-input>
+  </app-form-field>
+
+  <app-form-field label="Teléfono" placeholder="Introduce tu número de teléfono" type="tel">
+    <app-input formControlName="phone"></app-input>
+  </app-form-field>
+
+  <app-form-field label="Nombre de usuario" placeholder="Introduce tu nombre de usuario" type="text">
+    <app-input formControlName="username"></app-input>
+  </app-form-field>
+
+  <app-form-field label="Contraseña" placeholder="Introduce tu contraseña" type="password">
+    <app-input formControlName="password"></app-input>
+  </app-form-field>
+
+  <app-form-field label="Rol" placeholder="Selecciona tu rol">
+    <app-select formControlName="rol_id" [options]="roles"></app-select>
+  </app-form-field>
+
+
+  <button type="submit">Registrar</button>
+</form>
