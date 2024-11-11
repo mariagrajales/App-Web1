@@ -10,7 +10,7 @@ export const appRoutes: Routes = [
   { path: 'register-dog', component: RegisterDogComponent },
   { path: 'dogs', component: DogsPageComponent },
   { path: 'register-user', component: RegisterUserComponent },
-  { path: 'login', component: LoginPageComponent }, // Ruta para la página de inicio de sesión
-  { path: '', redirectTo: 'register-owner', pathMatch: 'full' },
-  { path: '**', redirectTo: 'register-owner' }
+  { path: 'login', component: LoginPageComponent },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: '**', redirectTo: 'login' }
 ];
