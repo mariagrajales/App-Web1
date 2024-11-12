@@ -1,0 +1,7 @@
+<app-label text="Seleccionar Dueño"></app-label>
+<select [ngModel]="selectedOwner" (change)="onSelectionChange($event)">
+  <option value="" disabled selected>Selecciona un dueño</option>
+  <option *ngFor="let owner of owners" [value]="owner.value">
+    {{ owner.label }}
+  </option>
+</select>

@@ -1,0 +1,56 @@
+<div class="container">
+  <div class="form-container" [formGroup]="dogForm">
+    <!-- Primera fila: Dueño y Nombre -->
+    <div class="form-row">
+      <app-owner-select
+        class="form-field"
+        [owners]="owners"
+        formControlName="ownerId">
+      </app-owner-select>
+
+      <app-form-field
+        class="form-field"
+        label="Nombre"
+        placeholder="Ingresa el nombre del perrito">
+        <app-input formControlName="name" type="text" placeholder="Ingresa el nombre del perrito"></app-input>
+      </app-form-field>
+    </div>
+
+    <!-- Segunda fila: Edad y Raza -->
+    <div class="form-row">
+      <app-form-field
+        class="form-field"
+        label="Edad"
+        placeholder="Ingresa la edad">
+        <app-input formControlName="age" type="number" placeholder="Ingresa la edad"></app-input>
+      </app-form-field>
+
+      <app-form-field
+        class="form-field"
+        label="Raza"
+        placeholder="Ingresa la raza">
+        <app-input formControlName="breed" type="text" placeholder="Ingresa la raza"></app-input>
+      </app-form-field>
+    </div>
+
+    <!-- Tercera fila: Sexo y Color -->
+    <div class="form-row">
+      <app-form-field
+        class="form-field"
+        label="Sexo"
+        placeholder="Ingresa el sexo">
+        <app-input formControlName="sex" type="text" placeholder="Ingresa el sexo"></app-input>
+      </app-form-field>
+
+      <app-form-field
+        class="form-field"
+        label="Color"
+        placeholder="Ingresa el color">
+        <app-input formControlName="color" type="text" placeholder="Ingresa el color"></app-input>
+      </app-form-field>
+    </div>
+
+    <!-- Botón de registro -->
+    <button (click)="onSubmit()">Registrar</button>
+  </div>
+</div>

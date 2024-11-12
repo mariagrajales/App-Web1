@@ -1,0 +1,50 @@
+<div class="dog-card">
+  <h3>{{ dog.name }}</h3>
+  <p><strong>Edad:</strong> {{ dog.age }} años</p>
+  <p><strong>Raza:</strong> {{ dog.breed }}</p>
+  <p><strong>Color:</strong> {{ dog.color }}</p>
+  <p><strong>Sexo:</strong> {{ dog.sexo }}</p>
+  <p><strong>Dueño:</strong> {{ dog.owner }}</p>
+
+  <!-- Botón para abrir la modal de registrar vacuna -->
+  <button (click)="openVaccineModal()">Registrar Vacuna</button>
+
+  <!-- Botón para abrir el modal de generar certificado -->
+  <button (click)="openCertificateModal()">Generar Certificado</button>
+</div>
+
+<!-- Modal para registrar vacuna -->
+<div class="modal" *ngIf="isVaccineModalOpen">
+  <div class="modal-content">
+    <span class="close" (click)="closeVaccineModal()">&times;</span>
+    <h2>Registrar Vacuna</h2>
+
+    <!-- Campo para el nombre de la vacuna -->
+    <label for="vaccineName">Nombre de la vacuna:</label>
+    <input id="vaccineName" [(ngModel)]="vaccineName" placeholder="Ej. Rabia" />
+
+    <!-- Campo para la fecha de la vacuna -->
+    <label for="creationDate">Fecha de aplicación:</label>
+    <input id="creationDate" [(ngModel)]="creationDate" type="date" />
+
+    <!-- Botón para registrar la vacuna -->
+    <button (click)="registerVaccine()">Registrar</button>
+  </div>
+</div>
+
+<!-- Modal para mostrar lista de vacunas -->
+<div class="modal" *ngIf="isCertificateModalOpen">
+  <div class="modal-content">
+    <span class="close" (click)="closeCertificateModal()">&times;</span>
+    <h2>Certificado de Vacunas</h2>
+    <ul *ngIf="vaccines && vaccines.length > 0">
+      <li *ngFor="let vaccine of vaccines">
+        <strong>{{ vaccine.vacuna }}</strong> - {{ vaccine.fechaCreacion | date: 'dd/MM/yyyy' }}
+        <button (click)="downloadCertificate(vaccine.id)">Descargar Certificado</button>
+      </li>
+    </ul>
+
+    <p *ngIf="!vaccines || vaccines.length === 0">No se encontraron vacunas registradas.</p>
+  </div>
+</div>
+

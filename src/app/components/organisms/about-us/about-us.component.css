@@ -1,0 +1,16 @@
+.about-us {
+  padding: 20px;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.about-us app-title {
+  margin-bottom: 16px;
+}
+
+.about-us app-paragraph {
+  font-size: 16px;
+  color: #555;
+}

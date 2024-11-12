@@ -1,0 +1,12 @@
+<section class="testimonials">
+  <app-title [text]="'Testimonios'" [level]="2"></app-title>
+
+  <div class="testimonials-list">
+    <app-testimonial-card
+      *ngFor="let testimonial of testimonials"
+      [author]="testimonial.author"
+      [content]="testimonial.content"
+      [imageUrl]="testimonial.imageUrl">
+    </app-testimonial-card>
+  </div>
+</section>

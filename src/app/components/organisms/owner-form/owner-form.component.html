@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="form-container" [formGroup]="ownerForm">
+    <app-form-field
+      class="form-field"
+      label="Nombre Completo"
+      placeholder="Ingresa tu nombre completo">
+      <app-input formControlName="name" type="text" placeholder="Ingresa tu nombre completo"></app-input>
+    </app-form-field>
+
+    <app-form-field
+      class="form-field"
+      label="Edad"
+      type="number"
+      placeholder="Ingresa tu edad">
+      <app-input formControlName="age" type="number" placeholder="Ingresa tu edad"></app-input>
+    </app-form-field>
+
+    <app-form-field
+      class="form-field"
+      label="Correo Electrónico"
+      type="email"
+      placeholder="Ingresa tu correo">
+      <app-input formControlName="email" type="email" placeholder="Ingresa tu correo"></app-input>
+    </app-form-field>
+
+    <app-form-field
+      class="form-field"
+      label="Número de Teléfono"
+      type="tel"
+      placeholder="Ingresa tu número de teléfono">
+      <app-input formControlName="phone" type="tel" placeholder="Ingresa tu número de teléfono"></app-input>
+    </app-form-field>
+
+    <button (click)="onSubmit()">Registrar</button>
+  </div>
+</div>

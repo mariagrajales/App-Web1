@@ -1,0 +1,18 @@
+.testimonials {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.testimonials-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+}
+
+.testimonials app-title {
+  margin-bottom: 16px;
+}
