@@ -1,0 +1,9 @@
+{
+  "routes": [
+    "/dogs",
+    "/login",
+    "/register-dog",
+    "/register-owner",
+    "/register-user"
+  ]
+}

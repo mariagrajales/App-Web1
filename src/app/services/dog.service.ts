@@ -7,9 +7,9 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class DogService {
-  private apiUrl = 'http://localhost:3000/api/dogs';
-  private userApiUrl = 'http://localhost:3000/api/users';
-  private certificateApiUrl = 'http://localhost:3000/api/certificates';
+  private apiUrl = 'http://54.172.127.28:3000/api/dogs';
+  private userApiUrl = 'http://54.172.127.28:3000/api/users';
+  private certificateApiUrl = 'http://54.172.127.28:3000/api/certificates';
 
   constructor(private http: HttpClient, private authService: AuthService) {}
 
